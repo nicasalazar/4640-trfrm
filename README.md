@@ -45,3 +45,32 @@ sudo apt-get install terraform
 ```bash
 export TF_VAR_do_token=<your api key>
 ```
+
+### Create a Digital Ocean Provider
+1. Create a main.tf file in your Ubuntu local machine
+2. Configure main.tf with the proper credentials
+
+```bash
+terraform {
+  required_providers {
+    digitalocean = {
+      source  = "digitalocean/digitalocean"
+      version = "~> 2.0"
+    }
+  }
+}
+
+# Set the variable value in *.tfvars file
+variable "do_token" {}
+
+# Configure the DigitalOcean Provider
+provider "digitalocean" {
+  token = var.do_token
+}
+```
+3. Initialize your main.tf
+
+```bash
+terraform init
+```
+4. This will create a new .terraform and a .terraform_loc.hcl folder in your directory
