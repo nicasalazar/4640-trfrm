@@ -74,7 +74,9 @@ provider "digitalocean" {
 terraform init
 ```
 4. This will create a new .terraform and a .terraform_loc.hcl folder in your directory
-5. Edit you main.tf file again and add the configuration for your ssh key and digital ocean project
+
+### Adding Configurations to main.tf File
+1. Edit you main.tf file again and add the configuration for your ssh key and digital ocean project
 
 ```bash
 data "digitalocean_ssh_key" "my_ssh_key" {
@@ -85,20 +87,20 @@ data "digitalocean_project" "lab_project" {
         name = "ACIT4640-Lab"
 }
 ```
-5a. Create a new tag configuration
+2. Create a new tag configuration
 ```bash
 resource "digitalocean_tag" "do_tag" {
         name = "Web"
 }
 ```
-5b. Create a VPC configuration
+3. Create a VPC configuration
 ```bash
 resource "digitalocean_vpc" "web_vpc" {
   name   = "4640_labs"
   region = "sfo3"
 }
 ```
-5c. Create a new Web Droplet configuration in the sfo3 region
+4. Create a new Web Droplet configuration in the sfo3 region
 ```bash
 resource "digitalocean_droplet" "web" {
   image    = "rockylinux-9-x64"
