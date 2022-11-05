@@ -80,7 +80,7 @@ terraform init
 
 ```bash
 data "digitalocean_ssh_key" "my_ssh_key" {
-        name = "ACIT4640_Lab_Key"
+        name = "ACIT4640_Lab"
 }
 
 data "digitalocean_project" "lab_project" {
@@ -96,7 +96,7 @@ resource "digitalocean_tag" "do_tag" {
 3. Create a VPC configuration
 ```bash
 resource "digitalocean_vpc" "web_vpc" {
-  name   = "4640_labs"
+  name   = "web"
   region = "sfo3"
 }
 ```
