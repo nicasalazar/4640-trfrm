@@ -31,7 +31,7 @@ resource "digitalocean_tag" "do_tag" {
 
 # Create new VPC
 resource "digitalocean_vpc" "web_vpc" {
-  name   = "4640_labs"
+  name   = "web"
   region = "sfo3"
 }
 
