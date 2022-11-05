@@ -80,7 +80,7 @@ terraform init
 
 ```bash
 data "digitalocean_ssh_key" "my_ssh_key" {
-        name = "ACIT4640_Lab"
+        name = "4640_Lab"
 }
 
 data "digitalocean_project" "lab_project" {
