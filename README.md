@@ -112,4 +112,32 @@ resource "digitalocean_droplet" "web" {
   vpc_uuid = digitalocean_vpc.web_vpc.id
 }
 ```
+5. Attach our Droplet to a Digital Ocean Project
+```bash
+resource "digitalocean_project_resources" "project_attach" {
+  project = data.digitalocean_project.lab_project.id
+  resources = [
+    digitalocean_droplet.web.urn
+  ]
+}
+```
+6. Print IP address of Droplet created using an output block
+```bash
+output "server_ip" {
+  value = digitalocean_droplet.web.ipv4_address
+}
+```
+
+7. Validate and Plan your Configuration using the following commands
+```bash
+terraform validate
+```
+```bash
+terraform plan
+```
+
+### Create The Resources
+```bash
+terraform apply
+```
 
