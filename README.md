@@ -38,7 +38,7 @@ sudo apt-get install terraform
 
 ### Create a API Key in Digital Ocean
 1. Create a digitocean account
-2. Create a new API key and copy the key
+2. Generate a new API key and copy the key
 3. Remote into you Ubuntu host machine and create a .env file
 4. Add the following to your .env file
 
