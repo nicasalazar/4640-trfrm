@@ -85,9 +85,9 @@ data "digitalocean_project" "lab_project" {
         name = "ACIT4640-Lab"
 }
 ```
-6. And create a new tag
-```bash
-resource "digitalocean_tag" "do_tag" {
-  name = "Web"
-}
-```
+  5a. Create a new tag
+    ```bash
+    resource "digitalocean_tag" "do_tag" {
+      name = "Web"
+    }
+    ```
