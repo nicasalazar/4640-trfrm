@@ -2,13 +2,13 @@
 
 ### Installation in Ubuntu/Debian
 
-1.
+1. Install HashiCorp's Debian package repository.
 ```bash
 sudo apt-get update && sudo apt-get install -y gnupg software-properties-common
 
 ```
 
-2.
+2. Install the HashiCorp GPG key.
 ```bash
 
 wget -O- https://apt.releases.hashicorp.com/gpg | \
@@ -16,21 +16,21 @@ wget -O- https://apt.releases.hashicorp.com/gpg | \
     sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg
 ```
 
-3.
+3. Verify the key's fingerprint.
 ```bash
 gpg --no-default-keyring \
     --keyring /usr/share/keyrings/hashicorp-archive-keyring.gpg \
     --fingerprint
 ```
 
-4.
+4. Add the official HashiCorp repository
 ```bash
 echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] \
     https://apt.releases.hashicorp.com $(lsb_release -cs) main" | \
     sudo tee /etc/apt/sources.list.d/hashicorp.list
 ```
 
-5.
+5. Download HashiCorp package information & Install Terraform
 ```bash
 sudo apt update
 sudo apt-get install terraform
