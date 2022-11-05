@@ -1,6 +1,7 @@
 # Terraform Instructions
 
 ### Terraform Installation in Ubuntu/Debian
+Steps are from the following link: https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
 
 1. Install HashiCorp's Debian package repository.
 ```bash
@@ -51,6 +52,8 @@ source .env
 ```
 
 ### Create a Digital Ocean Provider
+
+
 1. Create a main.tf file in your Ubuntu local machine
 2. Configure main.tf with the proper credentials
 
