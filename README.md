@@ -1,6 +1,6 @@
-# Terraform Installation
+# Terraform Instructions
 
-### Installation in Ubuntu/Debian
+### Terraform Installation in Ubuntu/Debian
 
 1. Install HashiCorp's Debian package repository.
 ```bash
@@ -34,4 +34,14 @@ echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] \
 ```bash
 sudo apt update
 sudo apt-get install terraform
+```
+
+### Create a API Key in Digital Ocean
+1. Create a digitocean account
+2. Create a new API key and copy the key
+3. Remote into you Ubuntu host machine and create a .env file
+4. Add the following to your .env file
+
+```bash
+export TF_VAR_do_token=<your api key>
 ```
