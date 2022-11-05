@@ -45,6 +45,10 @@ sudo apt-get install terraform
 ```bash
 export TF_VAR_do_token=<your api key>
 ```
+5. Run API key
+```bash
+source .env
+```
 
 ### Create a Digital Ocean Provider
 1. Create a main.tf file in your Ubuntu local machine
