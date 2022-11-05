@@ -85,9 +85,29 @@ data "digitalocean_project" "lab_project" {
         name = "ACIT4640-Lab"
 }
 ```
-  5a. Create a new tag
-    ```bash
-    resource "digitalocean_tag" "do_tag" {
-      name = "Web"
-    }
-    ```
+5a. Create a new tag configuration
+```bash
+resource "digitalocean_tag" "do_tag" {
+        name = "Web"
+}
+```
+5b. Create a VPC configuration
+```bash
+resource "digitalocean_vpc" "web_vpc" {
+  name   = "4640_labs"
+  region = "sfo3"
+}
+```
+5c. Create a new Web Droplet configuration in the sfo3 region
+```bash
+resource "digitalocean_droplet" "web" {
+  image    = "rockylinux-9-x64"
+  name     = "web-1"
+  tags     = [digitalocean_tag.do_tag.id]
+  region   = "sfo3"
+  size     = "s-1vcpu-512mb-10gb"
+  ssh_keys = [data.digitalocean_ssh_key.4640_Lab.id]
+  vpc_uuid = digitalocean_vpc.web_vpc.id
+}
+```
+
